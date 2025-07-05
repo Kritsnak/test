@@ -1,17 +1,18 @@
 <html>
   <head>
     <script src="https://cdn.jsdelivr.net/npm/aframe@1.4.2/dist/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/aframe/mindar-aframe.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/mindar-image-aframe.prod.js"></script>
     <style>body { margin: 0; overflow: hidden; }</style>
   </head>
   <body>
     <a-scene mindar-image="imageTargetSrc: targets.mind;" embedded color-space="sRGB" renderer="colorManagement: true;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
+      <a-text value="Camera is on" color="lime" position="0 2 -4"></a-text>
       <a-assets>
-        <img id="art" src="assets/test.JPG" />
+        <img id="art" src="assets/test.jpeg" />
       </a-assets>
-
+      
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-
+      
       <a-entity mindar-image-target="targetIndex: 0">
         <a-plane src="#art" height="1" width="1"></a-plane>
       </a-entity>
